@@ -1,27 +1,17 @@
-// server.js
 const express = require('express');
 // Import the session middleware
 const session = require('./config/session');
 const exphbs = require('express-handlebars');
-
-
+const authController = require('./controllers/authController');
+const auth = require('./utils/auth'); // Import the auth middleware
 
 
 const app = express();
 
-
-
 // Use the session middleware
 app.use(session);
 
-
 // ... Other middleware and routes ...
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}. Check it out here http://localhost:${PORT} !`);
-});
-
 
 //setup handlebars 
 app.engine('handlebars', exphbs());
@@ -51,4 +41,13 @@ app.get('/signup', (req, res) => {
 app.get('/post/:postId', (req, res) => {
   const postId = req.params.postId;
   res.render('post', postData); 
+});
+
+// Handle login route
+app.post('/login', authController.login);
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}. Check it out here http://localhost:${PORT}!`);
 });
