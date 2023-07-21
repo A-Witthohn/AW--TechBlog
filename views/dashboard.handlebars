@@ -1,0 +1,19 @@
+<!-- Render the dashboard page content within the main layout -->
+{{#> layouts/main}}
+  <h1>Dashboard</h1>
+  <!-- Display any blog posts the user has already created here -->
+  <div>
+    {{#each posts}}
+      <div>
+        <h2>{{title}}</h2>
+        <p>{{content}}</p>
+        <p>Created on: {{date}}</p>
+        <!-- Add links to edit or delete the post as needed -->
+        <a href="/post/edit/{{id}}">Edit</a>
+        <a href="/post/delete/{{id}}">Delete</a>
+      </div>
+    {{/each}}
+  </div>
+  <!-- Add a button to create a new blog post -->
+  <a href="/post/create">Create New Post</a>
+{{/layouts/main}}
