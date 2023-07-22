@@ -4,6 +4,7 @@ const session = require('./config/session');
 const exphbs = require('express-handlebars');
 const authController = require('./controllers/authController');
 const auth = require('./utils/auth'); // Import the auth middleware
+const bcrypt = require('./bcrypt');
 
 
 const app = express();
