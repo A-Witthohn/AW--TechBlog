@@ -7,21 +7,22 @@ const auth = require('./utils/auth'); // Import the auth middleware
 const bcrypt = require('bcrypt');
 
 
+
 const app = express();
 
 // Use the session middleware
 app.use(session);
-
+app.use(express.static('public'));
 // ... Other middleware and routes ...
 
 //setup handlebars 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-// Renders home or root
 app.get('/', (req, res) => {
   res.render('home');
 });
+
 
 // Render dashboard 
 app.get('/dashboard', (req, res) => {
@@ -50,5 +51,5 @@ app.post('/login', authController.login);
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}. Check it out here http://localhost:${PORT}!`);
+  console.log(`Server started on port ${PORT}. Check it out here "http://localhost:${PORT}"!`);
 });

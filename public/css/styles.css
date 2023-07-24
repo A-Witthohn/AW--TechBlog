@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+Header h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.centered{
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* This will make the li elements appear horizontally */
+    justify-content: center;
+    /* This centers the li elements horizontally */
+}
+
+nav li {
+    margin: 0 10px;
+    /* Add some spacing between the navigation links */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    /* Set the color of the links */
+}

@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<header>
+  <div class="centered">
+ <h1>TechBlog (being rendered from the main handlebars)</h1>
   {{> nav}}
-  <h1>TechBlog (being rendered from the main handlebars)</h1>
+  </div>
+
+</header>
+<body>
   {{{body}}} <!-- This will render the content of the individual views -->
 </body>
 </html>
